@@ -1354,9 +1354,10 @@ class NZscanMainWindow(QMainWindow):
     <li>Real-time signal graph</li>
     <li>Auto-refresh with configurable interval</li>
     <li>System tray support</li>
-    <li>Dark modern UI</li>
+    <li>Multiple colour themes (Dark, Light, Nord, Dracula)</li>
 </ul>
 <p><b>License:</b> MIT License</p>
+<p><a href="https://github.com/NeleBiH/NZscan">github.com/NeleBiH/NZscan</a></p>
         """
         dialog = QDialog(self)
         dialog.setWindowTitle("About NZscan")
@@ -1372,6 +1373,7 @@ class NZscanMainWindow(QMainWindow):
         text.setWordWrap(True)
         text.setStyleSheet("padding: 10px;")
         text.setAlignment(Qt.AlignCenter)
+        text.setOpenExternalLinks(True)
         layout.addWidget(text)
 
         buttons = QDialogButtonBox(QDialogButtonBox.Ok)
