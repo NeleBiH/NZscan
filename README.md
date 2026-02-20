@@ -10,8 +10,8 @@
 </p>
 
 <p align="center">
-  <a href="#bosanski">🇧🇦 Bosanski / Hrvatski / Srpski</a> &nbsp;|&nbsp;
-  <a href="#english">🇬🇧 English</a>
+  <a href="#english">🇬🇧 English</a> &nbsp;|&nbsp;
+  <a href="#bosanski">🇧🇦 Bosanski / Hrvatski / Srpski</a>
 </p>
 
 ---
@@ -25,76 +25,6 @@
 <p align="center">
   <img src="Screenshot/12.png" alt="Network Details" width="500"/>
 </p>
-
----
-
-<a name="bosanski"></a>
-
-## 🇧🇦 Bosanski / Hrvatski / Srpski
-
-### Opis
-
-NZscan je napredni WiFi skener za Linux. Aplikacija omogućuje detekciju i praćenje dostupnih WiFi mreža u realnom vremenu sa modernim UI sučeljem i podrškom za više tema.
-
-### Značajke
-
-**WiFi Skeniranje**
-- Prikaz svih dostupnih WiFi mreža
-- Informacije o svakoj mreži: SSID, BSSID, signal (% i dBm), kanal, frekvencija, pojas, sigurnost
-- Graf praćenja snage signala u realnom vremenu
-- Auto-refresh s podesivim intervalom
-- Sortiranje po koloni
-- Filter po imenu i frekventnom pojasu (2.4 / 5 GHz)
-
-**Korisničko Sučelje**
-- 4 teme: **Dark** (zadano), **Light**, **Nord**, **Dracula**
-- System tray podrška — minimiziranje umjesto zatvaranja
-- Network Details dijalog s grafom signala
-
-### Instalacija
-
-**Preduvjeti:** Python 3.10+, Linux, NetworkManager (`nmcli`)
-
-**Automatska instalacija (preporučeno)**
-```bash
-git clone https://github.com/NeleBiH/NZscan.git
-cd NZscan
-chmod +x setup.sh
-./setup.sh
-```
-Skripta automatski detektira distro (apt / dnf / pacman / zypper / xbps) i instalira sve potrebne pakete.
-
-**Ručna instalacija**
-```bash
-pip install -r requirements.txt
-python main.py
-```
-
-### Korištenje
-
-| Kontrola | Opis |
-|---|---|
-| 🔄 **Scan** | Ručno pokretanje skeniranja |
-| **Auto** | Uključi / isključi automatsko osvježavanje |
-| **Settings** | Postavke (tema, interval, tray…) |
-| **About** | Informacije o aplikaciji |
-
-- Dvoklik na red → Network Details s grafom signala
-- X gumb → minimizira u system tray
-- Desni klik na tray ikonu → izbornik
-
-### Konfiguracija
-
-Postavke se čuvaju u `config.json`:
-
-| Ključ | Opis |
-|---|---|
-| `theme` | Tema sučelja (`Dark` / `Light` / `Nord` / `Dracula`) |
-| `scan_interval` | Interval skeniranja u sekundama |
-| `start_minimized` | Pokreni minimiziran u tray |
-| `show_signal_bars` | Prikaži signal bars u tablici |
-| `close_to_tray` | X gumb minimizira umjesto zatvaranja |
-| `show_tray_notifications` | Tray notifikacije |
 
 ---
 
@@ -178,3 +108,73 @@ MIT License — see [LICENSE](LICENSE) for details.
 ### Contributing
 
 Pull requests are welcome. For major changes please open an issue first.
+
+---
+
+<a name="bosanski"></a>
+
+## 🇧🇦 Bosanski / Hrvatski / Srpski
+
+### Opis
+
+NZscan je napredni WiFi skener za Linux. Aplikacija omogućuje detekciju i praćenje dostupnih WiFi mreža u realnom vremenu sa modernim UI sučeljem i podrškom za više tema.
+
+### Značajke
+
+**WiFi Skeniranje**
+- Prikaz svih dostupnih WiFi mreža
+- Informacije o svakoj mreži: SSID, BSSID, signal (% i dBm), kanal, frekvencija, pojas, sigurnost
+- Graf praćenja snage signala u realnom vremenu
+- Auto-refresh s podesivim intervalom
+- Sortiranje po koloni
+- Filter po imenu i frekventnom pojasu (2.4 / 5 GHz)
+
+**Korisničko Sučelje**
+- 4 teme: **Dark** (zadano), **Light**, **Nord**, **Dracula**
+- System tray podrška — minimiziranje umjesto zatvaranja
+- Network Details dijalog s grafom signala
+
+### Instalacija
+
+**Preduvjeti:** Python 3.10+, Linux, NetworkManager (`nmcli`)
+
+**Automatska instalacija (preporučeno)**
+```bash
+git clone https://github.com/NeleBiH/NZscan.git
+cd NZscan
+chmod +x setup.sh
+./setup.sh
+```
+Skripta automatski detektira distro (apt / dnf / pacman / zypper / xbps) i instalira sve potrebne pakete.
+
+**Ručna instalacija**
+```bash
+pip install -r requirements.txt
+python main.py
+```
+
+### Korištenje
+
+| Kontrola | Opis |
+|---|---|
+| 🔄 **Scan** | Ručno pokretanje skeniranja |
+| **Auto** | Uključi / isključi automatsko osvježavanje |
+| **Settings** | Postavke (tema, interval, tray…) |
+| **About** | Informacije o aplikaciji |
+
+- Dvoklik na red → Network Details s grafom signala
+- X gumb → minimizira u system tray
+- Desni klik na tray ikonu → izbornik
+
+### Konfiguracija
+
+Postavke se čuvaju u `config.json`:
+
+| Ključ | Opis |
+|---|---|
+| `theme` | Tema sučelja (`Dark` / `Light` / `Nord` / `Dracula`) |
+| `scan_interval` | Interval skeniranja u sekundama |
+| `start_minimized` | Pokreni minimiziran u tray |
+| `show_signal_bars` | Prikaži signal bars u tablici |
+| `close_to_tray` | X gumb minimizira umjesto zatvaranja |
+| `show_tray_notifications` | Tray notifikacije |
