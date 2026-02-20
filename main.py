@@ -5,7 +5,7 @@ import subprocess
 import re
 from datetime import datetime
 
-DEBUG = True
+DEBUG = False
 
 APP_DIR = os.path.dirname(os.path.abspath(__file__))
 CONFIG_PATH = os.path.join(APP_DIR, "config.json")
@@ -673,7 +673,7 @@ class NZscanMainWindow(QMainWindow):
                 background-color: {THEME["bg_secondary"]};
             }}
             QWidget {{
-                color: {THEME["text_primary"]}; font-family: 'Segoe UI', sans-serif;
+                color: {THEME["text_primary"]}; font-family: 'Segoe UI', Ubuntu, Cantarell, 'Noto Sans', sans-serif;
             }}
             QTabWidget > QWidget {{
                 background-color: {THEME["bg_secondary"]};
@@ -841,7 +841,7 @@ class NZscanMainWindow(QMainWindow):
         """Re-apply per-widget inline stylesheets after a theme change."""
         self.header_title.setStyleSheet(f"""
             font-size: 24px; font-weight: bold;
-            color: {THEME["accent_primary"]}; font-family: 'Segoe UI', sans-serif;
+            color: {THEME["accent_primary"]}; font-family: 'Segoe UI', Ubuntu, Cantarell, 'Noto Sans', sans-serif;
         """)
         self.adapter_label.setStyleSheet(f"color: {THEME['text_secondary']};")
         self.wifi_count.setStyleSheet(f"color: {THEME['accent_primary']}; font-weight: 600;")
@@ -892,7 +892,7 @@ class NZscanMainWindow(QMainWindow):
         self.header_title = QLabel("NZscan")
         self.header_title.setStyleSheet(f"""
             font-size: 24px; font-weight: bold;
-            color: {THEME["accent_primary"]}; font-family: 'Segoe UI', sans-serif;
+            color: {THEME["accent_primary"]}; font-family: 'Segoe UI', Ubuntu, Cantarell, 'Noto Sans', sans-serif;
         """)
         layout.addWidget(self.header_title)
         layout.addSpacing(20)

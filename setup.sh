@@ -152,12 +152,18 @@ check_deps() {
     detect_distro
     echo ""
 
-    # python3
+    # python3 (3.10+ required)
     if ! command -v python3 &>/dev/null; then
         err "python3 not found"
         missing=1
     else
-        ok "python3 found: $(python3 --version 2>&1)"
+        py_ver=$(python3 -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}')")
+        if python3 -c "import sys; sys.exit(0 if sys.version_info >= (3,10) else 1)"; then
+            ok "python3 found: $(python3 --version 2>&1)"
+        else
+            err "python3 ${py_ver} found but 3.10+ is required"
+            missing=1
+        fi
     fi
 
     # PySide6
@@ -228,7 +234,7 @@ from PySide6.QtWidgets import QApplication
 from PySide6.QtCore import Qt, QPointF, QRectF
 from PySide6.QtGui import QPixmap, QPainter, QColor, QBrush, QPen
 
-app = QApplication(sys.argv)
+app = QApplication(sys.argv + ['-platform', 'offscreen'])
 size = ${size}
 pixmap = QPixmap(size, size)
 pixmap.fill(Qt.transparent)
